@@ -9,3 +9,7 @@
 
 A single makes 11 Family and 15 Large
 
+## Operation
+
+Calculate the third value when given the other two
+
