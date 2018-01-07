@@ -20,3 +20,6 @@ A single makes 11 Family and 15 Large
 
 The app is deployed at [dough-calculator.surge.sh](https://dough-calculator.surge.sh)
 
+## Tests
+
+Open `jasmine/SpecRunner.html` in a browser to run the tests
