@@ -1,8 +1,10 @@
 const MEDIUM = 12.85;
 const LARGE  = 17.85;
 const FAMILY = 23.84;
+const SINGLE = 530.12;
+const DOUBLE = 2 * SINGLE;
 
-let batchSize = 530.12;
+let batchSize = SINGLE;
 
 /* Parameters:
  *  - batch: single or double (530.1 for single)
@@ -28,9 +30,11 @@ const slider = document.getElementById('slider-color');
 const familyInput = document.getElementById('family-input');
 const largeInput = document.getElementById('large-input');
 const mediumInput = document.getElementById('medium-input');
+const singleBtn = document.getElementById('single');
+const doubleBtn = document.getElementById('double');
 
 noUiSlider.create(slider, {
-  start: [ 0, 225 ],
+  start: [ 0, 267.8 ],
   connect: [true, true, true],
   direction: 'rtl',
   behaviour: 'drag',
@@ -113,5 +117,30 @@ document.getElementById('up-medium').addEventListener('click', function() {
 document.getElementById('down-medium').addEventListener('click', function() {
   mediumInput.value = Math.ceil(mediumInput.value) - 1;
   mediumInputChanged();
+});
+
+singleBtn.addEventListener('click', function(e) {
+  e.preventDefault();
+  doubleBtn.classList.remove('active');
+  singleBtn.classList.add('active');
+  batchSize = SINGLE;
+  slider.noUiSlider.updateOptions({
+    range: {
+      min: 0,
+      max: SINGLE,
+    }
+  });
+});
+doubleBtn.addEventListener('click', function(e) {
+  e.preventDefault();
+  singleBtn.classList.remove('active');
+  doubleBtn.classList.add('active');
+  batchSize = DOUBLE;
+  slider.noUiSlider.updateOptions({
+    range: {
+      min: 0,
+      max: DOUBLE,
+    }
+  });
 });
 

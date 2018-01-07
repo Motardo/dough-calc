@@ -26,3 +26,20 @@
 .c-3-color { background: red; }
 .c-4-color { background: blue; }
 .c-5-color { background: purple; }
+
+.batch {
+  padding: 30px;
+}
+.batch > button.active {
+  background: #989898;
+}
+#single {
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+  margin-right: -2px;
+}
+#double {
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+  margin-left: -2px;
+}
