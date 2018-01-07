@@ -15,6 +15,7 @@
 .dough-number > input {
   width: 60px;
   font-size: 24px;
+  text-align: center;
 }
 .slider {
   padding: 40px 60px 20px 30px;

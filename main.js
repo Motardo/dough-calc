@@ -61,8 +61,8 @@ slider.noUiSlider.on('update', function( values, handle ) {
   largeInput.value = large.toFixed(2);
   mediumInput.value = medium.toFixed(2);
 
-  console.log("update event: %s", values.toString());
-  console.log("result: %s, %s, %s", family, large, medium);
+  // console.log("update event: %s", values.toString());
+  // console.log("result: %s, %s, %s", family, large, medium);
   // if ( handle ) {
   // inputNumber.value = value;
   // } else {
@@ -70,20 +70,48 @@ slider.noUiSlider.on('update', function( values, handle ) {
   // }
 });
 
-mediumInput.addEventListener('change', function() {
-  slider.noUiSlider.set([this.value * MEDIUM, null]);
-  console.log("change %s", this.value);
-});
-
-largeInput.addEventListener('change', function() {
+function familyInputChanged() {
+  slider.noUiSlider.set([null, batchSize - (familyInput.value * FAMILY)]);
+  console.log("change %s", familyInput.value);
+}
+function largeInputChanged() {
   // set handle0 to what is left from family and larges
   families = familyInput.value * FAMILY;
-  larges = this.value * LARGE;
+  larges = largeInput.value * LARGE;
   slider.noUiSlider.set([batchSize - (families + larges), null]);
-  console.log("change %s", this.value);
+  console.log("change %s", largeInput.value);
+}
+function mediumInputChanged() {
+    slider.noUiSlider.set([mediumInput.value * MEDIUM, null]);
+    console.log("change %s", mediumInput.value);
+}
+
+mediumInput.addEventListener('change', mediumInputChanged);
+largeInput.addEventListener('change', largeInputChanged);
+familyInput.addEventListener('change', familyInputChanged);
+
+document.getElementById('up-family').addEventListener('click', function() {
+  familyInput.value = Math.floor(familyInput.value) + 1;
+  familyInputChanged();
+});
+document.getElementById('down-family').addEventListener('click', function() {
+  familyInput.value = Math.ceil(familyInput.value) - 1;
+  familyInputChanged();
+});
+document.getElementById('up-large').addEventListener('click', function() {
+  largeInput.value = Math.floor(largeInput.value) + 1;
+  largeInputChanged();
+});
+document.getElementById('down-large').addEventListener('click', function() {
+  largeInput.value = Math.ceil(largeInput.value) - 1;
+  largeInputChanged();
+});
+document.getElementById('up-medium').addEventListener('click', function() {
+  mediumInput.value = Math.floor(mediumInput.value) + 1;
+  mediumInputChanged();
+});
+document.getElementById('down-medium').addEventListener('click', function() {
+  mediumInput.value = Math.ceil(mediumInput.value) - 1;
+  mediumInputChanged();
 });
 
-familyInput.addEventListener('change', function() {
-  slider.noUiSlider.set([null, batchSize - (this.value * FAMILY)]);
-  console.log("change %s", this.value);
-});
