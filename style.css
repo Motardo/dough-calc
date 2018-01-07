@@ -1,5 +1,23 @@
+.numbers-outer {
+  text-align: center;
+}
+.numbers-inner {
+  display: inline-block;
+}
+.dough-number {
+  display: inline-block;
+  width: 80px;
+  padding: 0 10px;
+}
+.dough-number > button {
+  margin: 2px 20px;
+}
+.dough-number > input {
+  width: 60px;
+  font-size: 24px;
+}
 .slider {
-  padding: 40px 60px 50px 30px;
+  padding: 40px 60px 20px 30px;
   margin: 20px 0;
 }
 .c-1-color { background: green; }
