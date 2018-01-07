@@ -1,15 +1,22 @@
 
 # Dough Calculator
 
-23.85  Family
-17.85  Large
-12.85  Medium
+Divide a batch of dough into Family, Large, and Medium dough balls
 
-530.1    Single
+| Weight | Ball
+| ------ |--------
+| 23.85  | Family
+| 17.85  | Large
+| 12.85  | Medium
+
+| Weight | Batch
+| ------ | -------
+| 530.1  | Single
+| 1060.2 | Double
 
 A single makes 11 Family and 15 Large
 
-## Operation
+## Demo
 
-Calculate the third value when given the other two
+The app is deployed at [dough-calculator.surge.sh](dough-calculator.surge.sh)
 
