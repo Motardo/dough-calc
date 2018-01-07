@@ -18,5 +18,5 @@ A single makes 11 Family and 15 Large
 
 ## Demo
 
-The app is deployed at [dough-calculator.surge.sh](dough-calculator.surge.sh)
+The app is deployed at [dough-calculator.surge.sh](https://dough-calculator.surge.sh)
 
