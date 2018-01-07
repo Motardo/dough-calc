@@ -61,9 +61,9 @@ slider.noUiSlider.on('update', function( values, handle ) {
   // var value = values[handle];
   const [family, large, medium] = calculateDoughBalls(batchSize, values[0], values[1]);
 
-  familyInput.value = family.toFixed(2);
-  largeInput.value = large.toFixed(2);
-  mediumInput.value = medium.toFixed(2);
+  familyInput.value = family.toFixed(1);
+  largeInput.value = large.toFixed(1);
+  mediumInput.value = medium.toFixed(1);
 
   // console.log("update event: %s", values.toString());
   // console.log("result: %s, %s, %s", family, large, medium);

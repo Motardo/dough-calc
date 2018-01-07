@@ -21,6 +21,15 @@
   padding: 40px 60px 20px 30px;
   margin: 20px 0;
 }
+.red-background {
+  background: #f88;
+}
+.yellow-background {
+  background: #ff8;
+}
+.green-background {
+  background: #8f8;
+}
 .c-1-color { background: green; }
 .c-2-color { background: yellow; }
 .c-3-color { background: red; }
