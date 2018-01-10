@@ -2,14 +2,18 @@ const MEDIUM = 12.85;
 const LARGE  = 17.85;
 const FAMILY = 23.84;
 const SINGLE = 530.12;
+const ONEANDAHALF = 1.5 * SINGLE;
 const DOUBLE = 2 * SINGLE;
+const TRIPLE = 3 * SINGLE;
 
 const slider = document.getElementById('slider-color');
 const familyInput = document.getElementById('family-input');
 const largeInput = document.getElementById('large-input');
 const mediumInput = document.getElementById('medium-input');
 const singleBtn = document.getElementById('single');
+const oneandahalfBtn = document.getElementById('oneandahalf');
 const doubleBtn = document.getElementById('double');
+const tripleBtn = document.getElementById('triple');
 
 let batchSize = SINGLE;
 
@@ -102,29 +106,29 @@ document.getElementById('down-medium').addEventListener('click', () => {
   mediumInputChanged();
 });
 
-singleBtn.addEventListener('click', (e) => {
-  e.preventDefault();
-  doubleBtn.classList.remove('active');
-  singleBtn.classList.add('active');
-  batchSize = SINGLE;
-  slider.noUiSlider.updateOptions({
-    range: {
-      min: 0,
-      max: SINGLE,
-    },
-  });
-});
-
-doubleBtn.addEventListener('click', (e) => {
-  e.preventDefault();
+function deActivateAll() {
   singleBtn.classList.remove('active');
-  doubleBtn.classList.add('active');
-  batchSize = DOUBLE;
+  oneandahalfBtn.classList.remove('active');
+  doubleBtn.classList.remove('active');
+  tripleBtn.classList.remove('active');
+}
+
+function selectBatch(e) {
+  console.log(e.target);
+  e.preventDefault();
+  deActivateAll();
+  e.target.classList.add('active');
+  batchSize = SINGLE * e.target.dataset.batch;
   slider.noUiSlider.updateOptions({
     range: {
       min: 0,
-      max: DOUBLE,
+      max: batchSize,
     },
   });
-});
+}
+
+singleBtn.addEventListener('click', selectBatch);
+oneandahalfBtn.addEventListener('click', selectBatch);
+doubleBtn.addEventListener('click', selectBatch);
+tripleBtn.addEventListener('click', selectBatch);
 

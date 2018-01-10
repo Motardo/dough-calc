@@ -1,26 +1,80 @@
+body {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+/*==================================
+ * SLIDER
+ */
+.slider {
+  padding: 40px 30px 20px 30px;
+  margin: 20px 0;
+}
+
+/*==================================
+ * DOUGH NUMBERS
+ */
 .numbers-outer {
   text-align: center;
 }
+
 .numbers-inner {
   display: inline-block;
 }
+
 .dough-number {
   display: inline-block;
   width: 80px;
   padding: 0 10px;
+  font-family: "Courier", serif;
 }
+
 .dough-number > button {
   margin: 2px 20px;
 }
+
 .dough-number > input {
   width: 60px;
   font-size: 24px;
   text-align: center;
 }
-.slider {
-  padding: 40px 60px 20px 30px;
-  margin: 20px 0;
+
+/*==================================
+ * BATCH SIZE BUTTONS
+ */
+.batch {
+  padding: 30px;
+  text-align: center;
 }
+
+.batch > button {
+  background-color: #eee;
+}
+
+.batch > button.active {
+  background-color: #989898;
+}
+
+#single {
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+  margin-right: -2px;
+}
+
+.inner-btn {
+  margin-left: -2px;
+  margin-right: -2px;
+}
+
+#triple {
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+  margin-left: -2px;
+}
+
+/*==================================
+ * COLORS
+ */
 .red-background {
   background: #f88;
 }
@@ -30,25 +84,14 @@
 .green-background {
   background: #8f8;
 }
-.c-1-color { background: green; }
-.c-2-color { background: yellow; }
-.c-3-color { background: red; }
-.c-4-color { background: blue; }
-.c-5-color { background: purple; }
 
-.batch {
-  padding: 30px;
+.c-1-color {
+  background: green;
 }
-.batch > button.active {
-  background: #989898;
+.c-2-color {
+  background: yellow;
 }
-#single {
-  border-bottom-left-radius: 10px;
-  border-top-left-radius: 10px;
-  margin-right: -2px;
+.c-3-color {
+  background: red;
 }
-#double {
-  border-bottom-right-radius: 10px;
-  border-top-right-radius: 10px;
-  margin-left: -2px;
-}
+
