@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Dough Calculator</title>
+    <link href="style.min.css" rel="stylesheet">
+    <!--if IEscript(type='text/javascript', src='https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js')
+    -->
+  </head>
+  <body>
+    <div class="slider">
+      <div id="slider-color">
+      </div>
+    </div>
+    <div class="numbers-outer">
+      <div class="numbers-inner">
+        <div class="dough-number red-background">
+          <p>Family</p>
+          <button id="up-family">+</button>
+          <input type="text" id="family-input" value="11" />
+          <button id="down-family">-</button>
+        </div>
+        <div class="dough-number yellow-background">
+          <p>Large</p>
+          <button id="up-large">+</button>
+          <input type="text" id="large-input" value="15" />
+          <button id="down-large">-</button>
+        </div>
+        <div class="dough-number green-background">
+          <p>Medium</p>
+          <button id="up-medium">+</button>
+          <input type="text" id="medium-input" value="0" />
+          <button id="down-medium">-</button>
+        </div>
+      </div>
+    </div>
+    <div class="batch">
+      <button id="single" class="active" data-batch="1">Single</button>
+      <button id="oneandahalf" class="inner-btn" data-batch="1.5">1&frac12;</button>
+      <button id="double" class="inner-btn" data-batch="2">Double</button>
+      <button id="triple" data-batch="3">Triple</button>
+    </div>
+    <script src="main.min.js"></script>
+  </body>
+</html>
+
