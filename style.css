@@ -25,8 +25,7 @@ body {
 .dough-number {
   display: inline-block;
   width: 80px;
-  padding: 0 10px;
-  font-family: "Courier", serif;
+  padding: 0 10px 20px;
 }
 
 .dough-number > button {
