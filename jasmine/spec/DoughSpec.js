@@ -1,4 +1,4 @@
-describe("Dough", function() {
+describe("Calculate dough balls", function() {
   describe("Single batch", function() {
     it("should calculate doughBalls", function() {
       const [family, large, medium] = calculateDoughBalls(SINGLE, 0, 267.8);
@@ -58,5 +58,38 @@ describe("Dough", function() {
       expect(Math.floor(medium)).toEqual(82);
     });
   });
+
+  describe("Triple batch", function() {
+    it("should calculate all family doughBalls", function() {
+      const [family, large, medium] = calculateDoughBalls(TRIPLE, 0, 0);
+      expect(Math.floor(family)).toEqual(66);
+      expect(large).toBeCloseTo(0, 1);
+      expect(medium).toBeCloseTo(0, 1);
+    });
+
+    it("should calculate all medium doughBalls", function() {
+      const [family, large, medium] = calculateDoughBalls(TRIPLE, TRIPLE, TRIPLE);
+      expect(family).toBeCloseTo(0, 1);
+      expect(large).toBeCloseTo(0, 1);
+      expect(Math.floor(medium)).toEqual(123);
+    });
+  });
+
+  describe("One-and-a-half batch", function() {
+    it("should calculate all family doughBalls", function() {
+      const [family, large, medium] = calculateDoughBalls(ONEANDAHALF, 0, 0);
+      expect(Math.floor(family)).toEqual(33);
+      expect(large).toBeCloseTo(0, 1);
+      expect(medium).toBeCloseTo(0, 1);
+    });
+
+    it("should calculate all medium doughBalls", function() {
+      const [family, large, medium] = calculateDoughBalls(ONEANDAHALF, ONEANDAHALF, ONEANDAHALF);
+      expect(family).toBeCloseTo(0, 1);
+      expect(large).toBeCloseTo(0, 1);
+      expect(Math.floor(medium)).toEqual(61);
+    });
+  });
+
 });
 
